@@ -1,92 +1,63 @@
-// ==========================
-// Animation au défilement
-// ==========================
-
+// Animation d'apparition au défilement
 
 const elements = document.querySelectorAll(
     "section, .projet, .competence"
 );
 
 
-window.addEventListener("scroll", () => {
+const observer = new IntersectionObserver((entries)=>{
 
+    entries.forEach(entry=>{
 
-    elements.forEach(element => {
+        if(entry.isIntersecting){
 
-
-        const position = element.getBoundingClientRect().top;
-
-        const hauteurEcran = window.innerHeight;
-
-
-
-        if(position < hauteurEcran - 100){
-
-            element.classList.add("apparition");
+            entry.target.classList.add("visible");
 
         }
 
-
     });
 
+}, 
+{
+    threshold:0.15
+});
+
+
+elements.forEach(element=>{
+
+    element.classList.add("hidden");
+
+    observer.observe(element);
 
 });
 
 
 
 
+// Effet machine à écrire corrigé
 
-// ==========================
-// Bouton retour en haut
-// ==========================
+const titre = document.querySelector("#accueil h1");
 
+const texte = "Bonjour, je suis Jody Hessa";
 
-const boutonTop = document.createElement("button");
+titre.innerHTML = "";
 
-
-boutonTop.innerHTML = "⬆";
-
-
-boutonTop.className = "top";
+let index = 0;
 
 
-document.body.appendChild(boutonTop);
+function ecrire(){
 
+    if(index < texte.length){
 
+        titre.innerHTML += texte.charAt(index);
 
+        index++;
 
-boutonTop.addEventListener("click",()=>{
+        setTimeout(ecrire,80);
 
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-
-});
-
-
-
-
-
-window.addEventListener("scroll",()=>{
-
-
-if(window.scrollY > 500){
-
-    boutonTop.style.display="block";
-
-}
-
-else{
-
-    boutonTop.style.display="none";
+    }
 
 }
 
 
-});
+ecrire();

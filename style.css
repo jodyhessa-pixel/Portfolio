@@ -1,62 +1,51 @@
-/* ==========================
-   STYLE GENERAL
-========================== */
+/* =========================
+   STYLE GLOBAL
+========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Segoe UI', Arial, sans-serif;
 }
-
 
 html{
     scroll-behavior:smooth;
 }
 
-
-
 body{
-
-    background:#f4f7fb;
-    color:#222;
+    background:#050816;
+    color:#e5e7eb;
     line-height:1.6;
-
 }
 
 
 
-/* ==========================
+/* =========================
    NAVIGATION
-========================== */
-
+========================= */
 
 nav{
-
-    background:#0b1120;
-    color:white;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
-
-    padding:20px 8%;
-
+    padding:20px 10%;
+    background:#070b1a;
+    border-bottom:1px solid #1e3a8a;
     position:sticky;
     top:0;
-
     z-index:1000;
 
 }
 
 
-
 nav h2{
 
-    color:#00a8ff;
+    color:#38bdf8;
+    font-size:28px;
 
 }
-
 
 
 nav ul{
@@ -68,22 +57,18 @@ nav ul{
 }
 
 
-
 nav a{
 
     color:white;
     text-decoration:none;
-    font-weight:bold;
-
     transition:0.3s;
 
 }
 
 
-
 nav a:hover{
 
-    color:#00a8ff;
+    color:#38bdf8;
 
 }
 
@@ -91,70 +76,61 @@ nav a:hover{
 
 
 
-
-/* ==========================
+/* =========================
    ACCUEIL
-========================== */
+========================= */
 
-
-header{
+#accueil{
 
     min-height:90vh;
-
     display:flex;
     flex-direction:column;
-
     justify-content:center;
     align-items:center;
-
     text-align:center;
 
-    padding:50px;
+}
 
-    background:
-    linear-gradient(
-    135deg,
-    #0b1120,
-    #142850
-    );
 
-    color:white;
+.photo-profil{
+
+    width:190px;
+    height:190px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #38bdf8;
+    box-shadow:0 0 30px #0284c7;
 
 }
 
 
+#accueil h1{
 
-header h1{
-
-    font-size:45px;
-
-}
-
-
-
-header span{
-
-    color:#00a8ff;
+    margin-top:25px;
+    font-size:50px;
 
 }
 
 
+#accueil span{
 
-header h3{
+    color:#38bdf8;
 
-    font-size:25px;
+}
 
+
+#accueil h3{
+
+    color:#94a3b8;
     margin:15px;
 
 }
 
 
+#accueil p{
 
-header p{
-
-    max-width:700px;
-
-    font-size:18px;
+    max-width:650px;
+    color:#cbd5e1;
 
 }
 
@@ -162,41 +138,35 @@ header p{
 
 
 
-.accueil-boutons{
+/* =========================
+   BOUTONS
+========================= */
 
-    margin-top:30px;
+.accueil-boutons a,
+.projet a{
 
-}
-
-
-
-.accueil-boutons a{
 
     display:inline-block;
-
-    margin:10px;
-
+    margin:15px;
     padding:12px 25px;
 
-    background:#00a8ff;
-
+    background:#0284c7;
     color:white;
 
+    border-radius:30px;
     text-decoration:none;
-
-    border-radius:25px;
 
     transition:0.3s;
 
 }
 
 
+.accueil-boutons a:hover,
+.projet a:hover{
 
-.accueil-boutons a:hover{
-
-    background:white;
-
-    color:#0b1120;
+    background:#38bdf8;
+    color:#020617;
+    transform:translateY(-5px);
 
 }
 
@@ -204,30 +174,23 @@ header p{
 
 
 
-
-
-/* ==========================
+/* =========================
    SECTIONS
-========================== */
-
+========================= */
 
 section{
 
-    padding:70px 8%;
+    padding:80px 10%;
 
 }
-
 
 
 section h2{
 
     text-align:center;
-
-    font-size:35px;
-
-    margin-bottom:40px;
-
-    color:#0b1120;
+    font-size:38px;
+    color:#38bdf8;
+    margin-bottom:50px;
 
 }
 
@@ -235,133 +198,37 @@ section h2{
 
 
 
-
-/* ==========================
-   A PROPOS
-========================== */
-
-
-#apropos p,
-#objectifs p,
-#contact p{
-
-    max-width:900px;
-
-    margin:auto;
-
-    text-align:center;
-
-    font-size:18px;
-
-}
-
-
-
-
-
-
-
-/* ==========================
+/* =========================
    COMPETENCES
-========================== */
+========================= */
 
 
-.competences-container{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:25px;
-
-    flex-wrap:wrap;
-
-}
-
-
-
-.competence{
-
-    background:white;
-
-    width:250px;
-
-    padding:25px;
-
-    text-align:center;
-
-    border-radius:15px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-
-    transition:0.3s;
-
-}
-
-
-
-.competence:hover{
-
-    transform:translateY(-10px);
-
-}
-
-
-
-.competence h3{
-
-    color:#0077ff;
-
-    margin-bottom:15px;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-   PROJETS
-========================== */
-
-
-
-#projets{
-
-    background:#eef3f8;
-
-}
-
-
-
+.competences-container,
 .projets-container{
 
     display:flex;
-
     justify-content:center;
-
-    gap:30px;
-
     flex-wrap:wrap;
+    gap:30px;
 
 }
 
 
-
+.competence,
 .projet{
 
-    background:white;
 
-    width:350px;
+    background:#0f172a;
+
+    width:300px;
 
     padding:30px;
 
     border-radius:20px;
 
-    box-shadow:
-    0 5px 20px rgba(0,0,0,0.12);
+    border:1px solid #1e3a8a;
+
+    box-shadow:0 0 20px rgba(56,189,248,0.15);
 
     transition:0.3s;
 
@@ -369,38 +236,33 @@ section h2{
 
 
 
+.competence:hover,
 .projet:hover{
 
     transform:translateY(-10px);
+
+    box-shadow:0 0 35px rgba(56,189,248,0.35);
 
 }
 
 
 
+
+.competence h3,
 .projet h3{
 
-    color:#0077ff;
-
+    color:#38bdf8;
     margin-bottom:15px;
 
 }
 
 
 
-.projet ul{
-
-    margin:20px;
-
-}
 
 
-
-.tags{
-
-    margin:15px 0;
-
-}
-
+/* =========================
+   TAGS
+========================= */
 
 
 .tags span{
@@ -408,76 +270,37 @@ section h2{
 
     display:inline-block;
 
-    background:#0b1120;
+    background:#082f49;
 
-    color:white;
+    color:#38bdf8;
 
-    padding:5px 12px;
+    padding:6px 15px;
 
     border-radius:20px;
 
     margin:5px;
 
-    font-size:14px;
-
 }
 
 
 
 
 
-
-.boutons{
-
-    margin-top:20px;
-
-}
-
-
-
-.boutons a{
-
-
-    display:inline-block;
-
-    background:#0077ff;
-
-    color:white;
-
-    text-decoration:none;
-
-    padding:10px 15px;
-
-    border-radius:8px;
-
-    margin-right:10px;
-
-    transition:0.3s;
-
-}
-
-
-
-.boutons a:hover{
-
-    background:#0b1120;
-
-}
-
-
-
-
-
-
-
-/* ==========================
+/* =========================
    CONTACT
-========================== */
+========================= */
 
 
 #contact{
 
-    background:white;
+    text-align:center;
+
+}
+
+
+#contact a{
+
+    color:#38bdf8;
 
 }
 
@@ -485,23 +308,20 @@ section h2{
 
 
 
-
-
-/* ==========================
+/* =========================
    FOOTER
-========================== */
+========================= */
 
 
 footer{
 
+    background:#020617;
 
-    background:#0b1120;
-
-    color:white;
+    padding:25px;
 
     text-align:center;
 
-    padding:20px;
+    border-top:1px solid #1e3a8a;
 
 }
 
@@ -509,13 +329,11 @@ footer{
 
 
 
+/* =========================
+   MOBILE
+========================= */
 
-/* ==========================
-   RESPONSIVE TELEPHONE
-========================== */
-
-
-@media(max-width:768px){
+@media(max-width:700px){
 
 
 nav{
@@ -527,78 +345,38 @@ nav{
 
 nav ul{
 
-    margin-top:20px;
-
     flex-direction:column;
 
-    text-align:center;
+    margin-top:20px;
 
 }
 
 
+#accueil h1{
 
-header h1{
-
-    font-size:32px;
-
-}
-
-
-
-section{
-
-    padding:50px 5%;
-
-}
-
-
-
-.projet,
-.competence{
-
-    width:100%;
+    font-size:35px;
 
 }
 
 
 }
-/* PHOTO PROFIL */
-
-.photo-profil{
-
-    width:180px;
-
-    height:180px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:5px solid #00a8ff;
-
-    margin-bottom:25px;
-
-}
-/* ==========================
+/* =========================
    ANIMATIONS
-========================== */
+========================= */
 
 
-section,
-.projet,
-.competence{
+.hidden{
 
     opacity:0;
 
     transform:translateY(40px);
 
-    transition:0.8s;
+    transition:1s;
 
 }
 
 
-
-.apparition{
+.visible{
 
     opacity:1;
 
@@ -609,33 +387,29 @@ section,
 
 
 
-/* Bouton retour haut */
+#accueil h1{
+
+    animation:glow 2s infinite alternate;
+
+}
 
 
-.top{
 
-    position:fixed;
+@keyframes glow{
 
-    bottom:30px;
 
-    right:30px;
+from{
 
-    width:45px;
+text-shadow:0 0 10px #38bdf8;
 
-    height:45px;
+}
 
-    border:none;
 
-    border-radius:50%;
+to{
 
-    background:#0077ff;
+text-shadow:0 0 30px #0284c7;
 
-    color:white;
+}
 
-    font-size:20px;
-
-    cursor:pointer;
-
-    display:none;
 
 }
